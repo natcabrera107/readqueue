@@ -31,67 +31,25 @@
             <button class="tab is-active" data-tab="papers">Papers</button>
             <button class="tab" data-tab="books">Books</button>
           </nav>
-          <button class="btn btn-add">+ Add Item</button>
+          <button class="btn btn-add" id="add-item">+ Add Item</button>
         </div>
 
         <div class="toolbar-filters">
           <div class="search">
             <span class="search-icon" aria-hidden="true">&#128269;</span>
-            <input type="search" placeholder="Search..." />
+            <input type="search" id="search" placeholder="Search..." />
           </div>
           <div class="filters">
-            <button class="filter is-active">All</button>
-            <button class="filter">To-Read</button>
-            <button class="filter">Reading</button>
-            <button class="filter">Done</button>
+            <button class="filter is-active" data-status="all">All</button>
+            <button class="filter" data-status="to-read">To-Read</button>
+            <button class="filter" data-status="reading">Reading</button>
+            <button class="filter" data-status="done">Done</button>
           </div>
         </div>
 
-        <ul class="item-list" data-panel="papers">
-          <li class="item-card" data-type="paper" data-id="">
-            <span class="item-num">1</span>
-            <div class="item-body">
-              <div class="item-main">
-                <h3 class="item-title">Paper title</h3>
-                <p class="item-authors">Author</p>
-                <p class="item-venue">Venue · Year</p>
-                <div class="tags">
-                  <span class="tag">tag</span>
-                </div>
-              </div>
-              <div class="item-side">
-                <button class="status">To-Read</button>
-                <div class="item-actions">
-                  <button class="action action-edit">&#9998; Edit</button>
-                  <button class="action action-delete">&#128465; Delete</button>
-                </div>
-              </div>
-            </div>
-          </li>
-        </ul>
-
-        <ul class="item-list" data-panel="books" hidden>
-          <li class="item-card" data-type="book" data-id="">
-            <span class="item-num">1</span>
-            <div class="item-body">
-              <div class="item-main">
-                <h3 class="item-title">Book title</h3>
-                <p class="item-authors">Author</p>
-                <p class="item-venue">Publisher · Year</p>
-                <div class="tags">
-                  <span class="tag">tag</span>
-                </div>
-              </div>
-              <div class="item-side">
-                <button class="status">To-Read</button>
-                <div class="item-actions">
-                  <button class="action action-edit">&#9998; Edit</button>
-                  <button class="action action-delete">&#128465; Delete</button>
-                </div>
-              </div>
-            </div>
-          </li>
-        </ul>
+        <!-- Cards are rendered by landing.js -->
+        <ul class="item-list" data-panel="papers"></ul>
+        <ul class="item-list" data-panel="books" hidden></ul>
       </section>
 
       <aside class="comments" id="comments" hidden>
@@ -99,15 +57,8 @@
         <h2 class="comments-title">Comments</h2>
         <p class="comments-for">For: <a href="#" id="comments-for">selected item</a></p>
 
-        <ul class="comment-list">
-          <li class="comment">
-            <div class="comment-head">
-              <span class="comment-author">Author</span>
-              <span class="comment-date">Date</span>
-            </div>
-            <p class="comment-text">Comment text</p>
-          </li>
-        </ul>
+        <!-- Comments are rendered by landing.js -->
+        <ul class="comment-list"></ul>
 
         <form class="comment-form">
           <input type="text" class="comment-name" placeholder="Your name" />
@@ -116,6 +67,30 @@
         </form>
       </aside>
     </main>
+
+    <!-- Add / edit form (hidden until opened) -->
+    <div class="form-backdrop" id="item-form-backdrop" hidden>
+      <form class="item-form" id="item-form">
+        <h2 id="item-form-title">Add item</h2>
+        <label>Title <input name="title" required /></label>
+        <label>Authors <input name="authors" /></label>
+        <label>Venue <input name="venue" /></label>
+        <label>Year <input name="year" type="number" /></label>
+        <label>Tags (comma separated) <input name="tags" /></label>
+        <label>
+          Status
+          <select name="status">
+            <option value="to-read">To-Read</option>
+            <option value="reading">Reading</option>
+            <option value="done">Done</option>
+          </select>
+        </label>
+        <div class="item-form-actions">
+          <button type="button" class="btn" id="item-form-cancel">Cancel</button>
+          <button type="submit" class="btn btn-add">Save</button>
+        </div>
+      </form>
+    </div>
 
     <script src="js/landing.js"></script>
   </body>

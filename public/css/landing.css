@@ -210,3 +210,80 @@
 .btn-post {
   margin-top: 14px;
 }
+
+/* Empty list message */
+.item-empty {
+  list-style: none;
+  padding: 24px;
+  color: var(--text-faint);
+  font-size: 15px;
+  text-align: center;
+}
+
+/* Add / edit form modal */
+.form-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.item-form {
+  width: 100%;
+  max-width: 460px;
+  background: var(--bg);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.item-form h2 {
+  font-size: 20px;
+}
+
+.item-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.item-form input,
+.item-form select {
+  padding: 10px 12px;
+  font-family: inherit;
+  font-size: 15px;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  outline: none;
+}
+
+.item-form input:focus,
+.item-form select:focus {
+  border-color: var(--blue);
+}
+
+.item-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.btn-add {
+  background: var(--blue);
+  color: #fff;
+  border-color: var(--blue);
+}
+
+.btn-add:hover {
+  background: var(--blue-dark);
+  border-color: var(--blue-dark);
+}
