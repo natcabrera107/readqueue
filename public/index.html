@@ -47,21 +47,21 @@
           </div>
         </div>
 
-        <ul class="paper-list" data-panel="papers">
-          <li class="paper-card">
-            <span class="paper-num">1</span>
-            <div class="paper-body">
-              <div class="paper-main">
-                <h3 class="paper-title">Paper title</h3>
-                <p class="paper-authors">Author</p>
-                <p class="paper-venue">Venue · Year</p>
+        <ul class="item-list" data-panel="papers">
+          <li class="item-card" data-type="paper" data-id="">
+            <span class="item-num">1</span>
+            <div class="item-body">
+              <div class="item-main">
+                <h3 class="item-title">Paper title</h3>
+                <p class="item-authors">Author</p>
+                <p class="item-venue">Venue · Year</p>
                 <div class="tags">
                   <span class="tag">tag</span>
                 </div>
               </div>
-              <div class="paper-side">
+              <div class="item-side">
                 <button class="status">To-Read</button>
-                <div class="paper-actions">
+                <div class="item-actions">
                   <button class="action action-edit">&#9998; Edit</button>
                   <button class="action action-delete">&#128465; Delete</button>
                 </div>
@@ -70,21 +70,21 @@
           </li>
         </ul>
 
-        <ul class="paper-list" data-panel="books" hidden>
-          <li class="paper-card">
-            <span class="paper-num">1</span>
-            <div class="paper-body">
-              <div class="paper-main">
-                <h3 class="paper-title">Book title</h3>
-                <p class="paper-authors">Author</p>
-                <p class="paper-venue">Publisher · Year</p>
+        <ul class="item-list" data-panel="books" hidden>
+          <li class="item-card" data-type="book" data-id="">
+            <span class="item-num">1</span>
+            <div class="item-body">
+              <div class="item-main">
+                <h3 class="item-title">Book title</h3>
+                <p class="item-authors">Author</p>
+                <p class="item-venue">Publisher · Year</p>
                 <div class="tags">
                   <span class="tag">tag</span>
                 </div>
               </div>
-              <div class="paper-side">
+              <div class="item-side">
                 <button class="status">To-Read</button>
-                <div class="paper-actions">
+                <div class="item-actions">
                   <button class="action action-edit">&#9998; Edit</button>
                   <button class="action action-delete">&#128465; Delete</button>
                 </div>
@@ -95,6 +95,7 @@
       </section>
 
       <aside class="comments" id="comments" hidden>
+        <button type="button" class="comments-close" id="comments-close" aria-label="Close comments">&times;</button>
         <h2 class="comments-title">Comments</h2>
         <p class="comments-for">For: <a href="#" id="comments-for">selected item</a></p>
 
@@ -109,6 +110,7 @@
         </ul>
 
         <form class="comment-form">
+          <input type="text" class="comment-name" placeholder="Your name" />
           <textarea rows="4" placeholder="Write a comment..."></textarea>
           <button type="submit" class="btn btn-post">Post Comment</button>
         </form>

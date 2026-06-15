@@ -1,4 +1,4 @@
-.paper-list {
+.item-list {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -7,7 +7,7 @@
   gap: 12px;
 }
 
-.paper-card {
+.item-card {
   display: flex;
   gap: 18px;
   padding: 18px 20px;
@@ -16,38 +16,38 @@
   background: var(--bg);
 }
 
-.paper-card.is-selected {
+.item-card.is-selected {
   background: var(--bg-selected);
   border-color: var(--blue);
   box-shadow: inset 3px 0 0 var(--blue);
 }
 
-.paper-num {
+.item-num {
   flex: 0 0 28px;
   font-size: 20px;
   color: var(--text-faint);
 }
 
-.paper-body {
+.item-body {
   flex: 1;
   display: flex;
   justify-content: space-between;
   gap: 16px;
 }
 
-.paper-title {
+.item-title {
   font-size: 18px;
   font-weight: 700;
   line-height: 1.35;
 }
 
-.paper-authors {
+.item-authors {
   margin-top: 4px;
   color: var(--text);
   font-size: 15px;
 }
 
-.paper-venue {
+.item-venue {
   color: var(--text-muted);
   font-size: 15px;
 }
@@ -68,7 +68,7 @@
   background: var(--bg);
 }
 
-.paper-side {
+.item-side {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -86,7 +86,7 @@
   color: var(--text);
 }
 
-.paper-actions {
+.item-actions {
   display: flex;
   gap: 16px;
 }
