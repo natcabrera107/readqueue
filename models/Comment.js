@@ -1,5 +1,7 @@
-import {getDB} from "./db.js"
+import { getDB } from "./db.js";
 
-export function getCommentsCollection () {
-    return getDB().collection("comments")
+import { ObjectId } from 'mongodb';
+
+export function getCommentsCollection() {
+    return getDB().collection("comments");
 }
