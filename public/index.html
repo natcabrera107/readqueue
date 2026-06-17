@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -13,7 +13,14 @@
     <header class="site-header">
       <span class="logo-mark" aria-hidden="true">
         <svg viewBox="0 0 40 40" width="40" height="40">
-          <rect x="0.5" y="0.5" width="39" height="39" fill="blue" stroke="currentColor" />
+          <rect
+            x="0.5"
+            y="0.5"
+            width="39"
+            height="39"
+            fill="blue"
+            stroke="currentColor"
+          />
         </svg>
       </span>
       <span class="wordmark">ReadQueue</span>
@@ -53,9 +60,18 @@
       </section>
 
       <aside class="comments" id="comments" hidden>
-        <button type="button" class="comments-close" id="comments-close" aria-label="Close comments">&times;</button>
+        <button
+          type="button"
+          class="comments-close"
+          id="comments-close"
+          aria-label="Close comments"
+        >
+          &times;
+        </button>
         <h2 class="comments-title">Comments</h2>
-        <p class="comments-for">For: <a href="#" id="comments-for">selected item</a></p>
+        <p class="comments-for">
+          For: <a href="#" id="comments-for">selected item</a>
+        </p>
 
         <!-- Comments are rendered by landing.js -->
         <ul class="comment-list"></ul>
@@ -86,7 +102,9 @@
           </select>
         </label>
         <div class="item-form-actions">
-          <button type="button" class="btn" id="item-form-cancel">Cancel</button>
+          <button type="button" class="btn" id="item-form-cancel">
+            Cancel
+          </button>
           <button type="submit" class="btn btn-add">Save</button>
         </div>
       </form>

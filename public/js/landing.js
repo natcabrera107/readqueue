@@ -294,8 +294,12 @@ searchInput.addEventListener("input", () => {
 });
 
 // Add item button + form cancel.
-document.getElementById("add-item").addEventListener("click", () => openForm(null));
-document.getElementById("item-form-cancel").addEventListener("click", closeForm);
+document
+  .getElementById("add-item")
+  .addEventListener("click", () => openForm(null));
+document
+  .getElementById("item-form-cancel")
+  .addEventListener("click", closeForm);
 
 // One delegated listener for everything inside a card.
 content.addEventListener("click", (e) => {
@@ -313,7 +317,9 @@ content.addEventListener("click", (e) => {
 });
 
 // Close the comments panel.
-document.getElementById("comments-close").addEventListener("click", closeComments);
+document
+  .getElementById("comments-close")
+  .addEventListener("click", closeComments);
 
 // ---------- start ----------
 updateAddLabel();

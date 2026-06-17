@@ -7,7 +7,9 @@
   "scripts": {
     "start": "node --watch server.js",
     "dev": "node --watch server.js",
-    "seed": "node seed.js"
+    "seed": "node seed.js",
+    "lint": "eslint .",
+    "format": "prettier --write ."
   },
   "keywords": [],
   "author": "",
@@ -16,5 +18,9 @@
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "mongodb": "^6.21.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.1",
+    "prettier": "^3.4.2"
   }
 }
