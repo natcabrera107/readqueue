@@ -3,6 +3,13 @@
 import "dotenv/config";
 import { connectDB, getDB } from "./models/db.js";
 
+const sampleList = {
+  name: "CS5610 Reading List",
+  description: "Books and papers for our web dev course",
+  editToken: "demo-edit-token-secret",
+  createdAt: new Date(),
+};
+
 const samplePapers = [
   {
     listId: "demo",
@@ -78,6 +85,7 @@ const sampleComments = [
     createdAt: new Date(),
   },
 ]
+
 
 
 async function seed() {
