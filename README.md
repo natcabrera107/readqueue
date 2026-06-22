@@ -32,6 +32,8 @@ CS5610 Web Development (Northeastern University) — _course page URL_
 ## Design Mockups and Project Details: 
 https://canva.link/h4mnfsgdi1midmu
 
+[Design Documents](./design%20document.pdf)
+
 ## Tech stack
 
 - **Backend:** Node.js, Express 5 (ES modules)
