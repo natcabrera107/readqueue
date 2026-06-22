@@ -45,7 +45,7 @@ const sampleBooks = [
     genre: "Software Engineering", 
     tags: ["pragmatic", "engineering"],
     order: 1,
-    status: "to read", 
+    status: "to-read", 
     comments: [],
   },
   {
@@ -90,6 +90,12 @@ const sampleComments = [
 
 async function seed() {
   await connectDB();
+
+  const lists = getDB().collection("lists");
+  await lists.deleteMany({});
+  await lists.insertOne(sampleList);
+  console.log("Inserted 1 List");
+
 
   const papers = getDB().collection("papers");
   await papers.deleteMany({}); // start clean each run

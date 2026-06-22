@@ -1,12 +1,12 @@
 import {getDB} from "./db.js";
-import { ObjectId } from 'mongodb';
+import { ObjectId } from "mongodb";
 
 //all list docs 
 
 const lists = () => getDB().collection("lists"); 
 
 export async function getList(id) {
-    return lists().findOne({ _id: new objectId(id)});
+    return lists().findOne({ _id: new ObjectIdbjectId(id)});
 
 }
 
@@ -18,5 +18,5 @@ export async function createList(data) {
         createdAt:   new Date(),
     };
     const result = await lists().insertOne(list);
-    return { ...list, _id: result.insertId};
+    return { ...list, _id: result.insertedId};
 }

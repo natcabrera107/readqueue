@@ -1,7 +1,7 @@
 import {Router} from "express";
 import { getList, createList } from "../models/List.js";
 
-const route = Router();
+const router = Router();
 
 router.get("/api/lists/:id", async (req, res) => {
   try {
