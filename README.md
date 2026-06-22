@@ -72,7 +72,7 @@ Books expose the same endpoints under `/api/books`.
 
 ## Screenshot
 
-![ReadQueue]()
+![ReadQueue](./screenshot.PNG)
 
 
 ## Build and run
