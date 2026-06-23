@@ -14,7 +14,7 @@ CS5610 Group 14 — Jiachen Zhao, Nathalie Cabrera
 
 ## Class link
 
-CS5610 Web Development (Northeastern University) — _course page URL_
+[CS5610 Web Development (Northeastern University)](https://johnguerra.co/classes/webDevelopment_online_summer_2026/)
 
 
 
