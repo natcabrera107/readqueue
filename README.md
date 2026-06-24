@@ -31,6 +31,7 @@ CS5610 Group 14 — Jiachen Zhao, Nathalie Cabrera
 
 ## Design Mockups and Project Details: 
 https://canva.link/h4mnfsgdi1midmu
+
 [Design Documents](./design%20document.pdf)
 
 ## Demo:
