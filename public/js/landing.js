@@ -47,6 +47,21 @@ function findItem(type, id) {
   return itemsByType[type].find((it) => String(it._id) === String(id));
 }
 
+// Escape user-supplied text before it goes into innerHTML.
+function escapeHtml(value) {
+  return String(value ?? "").replace(
+    /[&<>"']/g,
+    (ch) =>
+      ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;",
+      })[ch]
+  );
+}
+
 // ---------- load + render the list ----------
 async function loadItems(type) {
   try {
@@ -61,16 +76,16 @@ async function loadItems(type) {
 
 function cardHTML(item, index) {
   const tags = (item.tags || [])
-    .map((t) => `<span class="tag">${t}</span>`)
+    .map((t) => `<span class="tag">${escapeHtml(t)}</span>`)
     .join("");
   return `
     <li class="item-card" data-type="${activeType}" data-id="${item._id}">
       <span class="item-num">${index + 1}</span>
       <div class="item-body">
         <div class="item-main">
-          <h3 class="item-title">${item.title || "Untitled"}</h3>
-          <p class="item-authors">${item.authors || ""}</p>
-          <p class="item-venue">${item.venue || ""} ${item.year || ""}</p>
+          <h3 class="item-title">${escapeHtml(item.title) || "Untitled"}</h3>
+          <p class="item-authors">${escapeHtml(item.authors || "")}</p>
+          <p class="item-venue">${escapeHtml(item.venue || "")} ${escapeHtml(item.year || "")}</p>
           <div class="tags">${tags}</div>
         </div>
         <div class="item-side">
@@ -204,10 +219,10 @@ function renderComments(items = []) {
       (c) => `
       <li class="comment">
         <div class="comment-head">
-          <span class="comment-author">${c.author}</span>
-          <span class="comment-date">${new Date(c.createdAt).toLocaleString()}</span>
+          <span class="comment-author">${escapeHtml(c.author)}</span>
+          <span class="comment-date">${escapeHtml(new Date(c.createdAt).toLocaleString())}</span>
         </div>
-        <p class="comment-text">${c.text}</p>
+        <p class="comment-text">${escapeHtml(c.text)}</p>
       </li>`
     )
     .join("");
