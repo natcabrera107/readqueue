@@ -4,7 +4,6 @@ import { connectDB } from "./models/db.js";
 import papersRouter from "./routes/papers.js";
 
 import booksRouter from "./routes/books.js";
-import commentsRouter from "./routes/comments.js";
 import listsRouter from "./routes/lists.js";
 
 const app = express();
@@ -21,9 +20,6 @@ app.use(papersRouter);
 
 //Book router
 app.use(booksRouter);
-
-//Comment Router
-app.use(commentsRouter);
 
 //List Router
 app.use(listsRouter);
