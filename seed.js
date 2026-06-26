@@ -58,13 +58,6 @@ const sampleList = {
   createdAt: new Date(),
 };
 
-// sample comments
-const sampleComments = [
-  { entryId: "demo", entryType: "book", author: "Sofia", body: "Loved this book", createdAt: new Date() },
-  { entryId: "demo", entryType: "book", author: "Marcos", body: "Chapter 3 changed how I write functions.", createdAt: new Date() },
-  { entryId: "demo", entryType: "paper", author: "Alice", body: "Classic paper.", createdAt: new Date() },
-];
-
 async function seed() {
   await connectDB();
 
@@ -87,12 +80,6 @@ async function seed() {
   const bookDocs = Array.from({ length: COUNT }, (_, i) => makeBook(i));
   const booksResult = await books.insertMany(bookDocs);
   console.log(`Inserted ${booksResult.insertedCount} books`);
-
-  // comments
-  const comments = getDB().collection("comments");
-  await comments.deleteMany({});
-  const commentsResult = await comments.insertMany(sampleComments);
-  console.log(`Inserted ${commentsResult.insertedCount} comments`);
 
   process.exit(0);
 }
